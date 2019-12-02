@@ -5,7 +5,14 @@
 // above calculation and it to variable `sum`.
 
 //source: https://adventofcode.com/2019/day/1/input
-var data = document.querySelector('pre').innerText.split('\n').map(num=> Number(num))
+
+// similar to commented function, but removing the last item (but also reversing order of array)
+var data = document.querySelector('pre').innerText.split('\n').map(num=> Number(num)).reverse();
+data.shift();
+//this function adds a 101st index to array with value = 0, which shifts the solution down 2.
+// var data = document.querySelector('pre').innerText.split('\n').map(num=> Number(num))
+
+
 
 function fuelCalculator(moduleMassArray) {
 
@@ -33,6 +40,6 @@ fuelCalculator([12,14,1969,100756]) // => 34241
 
 
 
-let solution = fuelCalculator(data)
+let solution = fuelCalculator(data) // => 3382284
 
 //Attempt 1: 3382282 => too low
