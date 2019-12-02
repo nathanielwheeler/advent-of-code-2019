@@ -5,21 +5,9 @@
 // above calculation and it to variable `sum`.
 
 //source: https://adventofcode.com/2019/day/1/input
+var data = document.querySelector('pre').innerText.split('\n').map(num=> Number(num))
 
-var fs = require('fs'); //for reading file contents
-
-
-
-function fuelCalculator(inputLink) {
-  //Get inputTextFile
-  let rawText = "";
-  fs.readFile('../data/puzzle-01.txt', 'utf8', function(err, contents) {
-      rawText += contents;
-  });
-
-  //Parse into an array of number values
-  //ex. [a, b, c, ...]
-  let moduleMassArray = rawText.split("\n");
+function fuelCalculator(moduleMassArray) {
 
   //Initialize `sum` variable
   let sum = 0;
@@ -35,4 +23,16 @@ function fuelCalculator(inputLink) {
   console.log(sum);
 }
 
-let solution = fuelCalculator("../data/puzzle-01.txt")
+fuelCalculator([12]) // => 2
+fuelCalculator([14]) // => 2
+fuelCalculator([1969]) // => 654
+fuelCalculator([100756]) // => 33583
+
+fuelCalculator([12,14,1969,100756]) // => 101414
+//outputs 34341 instead. odd
+
+
+
+let solution = fuelCalculator(data)
+
+//Attempt 1: 3382282 => too low
