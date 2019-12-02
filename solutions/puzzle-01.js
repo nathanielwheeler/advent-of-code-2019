@@ -28,8 +28,8 @@ fuelCalculator([14]) // => 2
 fuelCalculator([1969]) // => 654
 fuelCalculator([100756]) // => 33583
 
-fuelCalculator([12,14,1969,100756]) // => 101414
-//outputs 34341 instead. odd
+fuelCalculator([12,14,1969,100756]) // => 34241
+//checks out
 
 
 
